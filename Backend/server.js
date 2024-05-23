@@ -17,5 +17,8 @@ mongoose.connect( MONGODB_URL)
     console.log("MongoDB Connection Successfull");
 })
 .catch( (err) => {
-    console.log("MongoDB Connection UnSuccessfull!");
+    console.log("MongoDB Connection UnSuccessfull!", err);
 });
+
+const imagerRoutes = require('./routes/imagerRoute.js');
+app.use(imagerRoutes);
