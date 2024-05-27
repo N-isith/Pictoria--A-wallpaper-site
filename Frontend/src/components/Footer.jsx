@@ -7,11 +7,11 @@ import { BsTwitterX } from "react-icons/bs";
 export default function Footer() {
     return (
         <div className="">
-            <hr className="w-10/12 mx-auto my-5" />
+            <hr className="w-10/12 mx-auto my-5 border-t-2 border-indigo-500" />
             <div>
                 <h1 className="text-center text-emerald-800 font-extrabold text-4xl">𝓟𝓘𝓒𝓣𝓞𝓡𝓘𝓐</h1>
             </div>
-            <hr className="w-8/12 mx-auto my-5" />
+            <hr className="w-8/12 mx-auto my-5 border-t-2 border-indigo-500" />
             <div>
                 <ul className="flex justify-center gap-10 font-bold text-neutral-100 text-lg">
                     <li className="hover:text-emerald-800"><a href="">Home</a></li>
@@ -19,7 +19,7 @@ export default function Footer() {
                     <li className="hover:text-emerald-800"><a href="">Help</a></li>
                 </ul>
             </div>
-            <hr className="w-6/12 mx-auto my-5" />
+            <hr className="w-6/12 mx-auto my-5 border-t-2 border-indigo-500" />
             <div>
                 <div>
                     <ul className="flex justify-center gap-10 font-bold text-neutral-100 text-3xl">
@@ -30,7 +30,7 @@ export default function Footer() {
                     </ul>
                 </div>
             </div>
-            <hr className="w-4/12 mx-auto my-5" />
+            <hr className="w-4/12 mx-auto my-5 border-t-2 border-indigo-500" />
 
         </div>
     )
