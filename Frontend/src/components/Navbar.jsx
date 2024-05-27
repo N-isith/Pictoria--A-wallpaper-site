@@ -25,7 +25,7 @@ export default function Navbar() {
               <a href="" onClick={() => { navigate('/signup')}}>Join Us</a>
             </li>
             <li className="bg-emerald-800 py-3 px-6 rounded-3xl text-neutral-100">
-              <a href="" >Log In</a>
+              <a href="" onClick={() => { navigate('/signin')}}>Log In</a>
               </li>
           </ul>
         </div>
