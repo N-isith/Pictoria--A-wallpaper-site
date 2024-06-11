@@ -1,16 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import SignUp from "./SignUp";
+import SignIn from "./SignIn";
 
 export default function Navbar() {
 
   const navigate = useNavigate();
+  const [showPopupsignup, setShowPopupSignup] = useState(false);
+  const [showPopupsignin, setShowPopupSignin] = useState(false);
+
+  const togglePopupSignup = (pop) => {
+    pop.preventDefault();
+    setShowPopupSignup(!showPopupsignup);
+  };
+  const togglePopupSignin = (pop) => {
+    pop.preventDefault();
+    setShowPopupSignin(!showPopupsignin);
+  };
 
   return (
     <div>
       <div>
         <div className="py-4 text-center text-emerald-800 font-extrabold text-5xl">
-          <h1>𝓟𝓘𝓒𝓣𝓞𝓡𝓘𝓐</h1>
+          <a href=""><h1 onClick={() => { navigate('/') }}>𝓟𝓘𝓒𝓣𝓞𝓡𝓘𝓐</h1></a>
         </div>
         <div>
           <ul className="flex justify-center gap-10 font-bold text-emerald-800">
@@ -22,11 +35,13 @@ export default function Navbar() {
               </div>
             </li>
             <li className="bg-neutral-300 py-3 px-6 rounded-3xl hover:bg-emerald-800 hover:text-neutral-100 hover:duration-300">
-              <a href="" onClick={() => { navigate('/signup')}}>Join Us</a>
+              <a href="" onClick={togglePopupSignup}>Join Us</a>
+              {showPopupsignup && <SignUp closePopup={togglePopupSignup} />}
             </li>
             <li className="bg-emerald-800 py-3 px-6 rounded-3xl text-neutral-100">
-              <a href="" onClick={() => { navigate('/signin')}}>Log In</a>
-              </li>
+              <a href="" onClick={togglePopupSignin}>Log In</a>
+              {showPopupsignin && <SignIn closePopup={togglePopupSignin} />}
+            </li>
           </ul>
         </div>
       </div>

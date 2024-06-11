@@ -2,7 +2,7 @@ import React from "react";
 
 export default function SignIn() {
   return (
-    <div className=" h-screen flex justify-center">
+    <div className="w-screen h-screen top-0 bottom-0 left-0 right-0 fixed flex justify-center">
             <div className="bg-slate-800 p-10 rounded-2xl mx-auto my-auto">
                 <h1 className="font-bold text-amber-300 text-3xl flex justify-center -mt-6 mb-6">Log In</h1>
                 <form className="text-amber-300 text-start text-lg">
