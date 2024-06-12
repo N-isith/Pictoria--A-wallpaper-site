@@ -1,27 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import imageBg from "./imageBg";
 import { IoClose } from "react-icons/io5";
 
-export default function SignUp({closePopup}) {
+export default function SignUp({ closePopup }) {
 
     const navigate = useNavigate();
 
-    const handleClick = (e) => {
-        e.stopPropagation();
-        closePopup();
-    }
+    useEffect(() => {
+        // Add class to disable scrolling
+        document.body.style.overflow = 'hidden';
 
-    const handleFormClick = (e) => {
-        e.stopPropagation();
-    }
+        // Cleanup function to remove class
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, []);
+
+    const closemodel = () => {
+         closePopup();
+    };
 
     return (
-        <div className="w-screen h-screen top-0 bottom-0 left-0 right-0 fixed flex justify-center bg-opacity-95" onClick={handleClick}>
-            <div className="bg-slate-800 p-10 rounded-2xl mx-auto my-auto relative" onClick={handleFormClick}>
-                
+        <div
+            id="maincnt"
+            onClick={closemodel}
+            className="w-screen h-screen top-0 bottom-0 left-0 right-0 fixed flex justify-center bg-black bg-opacity-60 backdrop-blur-sm">
+            <div className="bg-slate-800 p-10 rounded-2xl mx-auto my-auto relative">
+
                 <button className="bg-slate-700 px-1.5 py-1.5 rounded-md text-amber-300 font-bold hover:outline outline-1 absolute top-6 right-6"
-                onClick={closePopup}
+                    onClick={closePopup}
                 ><IoClose />
                 </button>
 

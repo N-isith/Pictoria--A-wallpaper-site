@@ -35,7 +35,7 @@ export default function Navbar() {
               </div>
             </li>
             <li className="bg-neutral-300 py-3 px-6 rounded-3xl hover:bg-emerald-800 hover:text-neutral-100 hover:duration-300">
-              <a href="" onClick={togglePopupSignup}>Join Us</a>
+              <a href="" onClick={(togglePopupSignup)}>Join Us</a>
               {showPopupsignup && <SignUp closePopup={togglePopupSignup} />}
             </li>
             <li className="bg-emerald-800 py-3 px-6 rounded-3xl text-neutral-100">

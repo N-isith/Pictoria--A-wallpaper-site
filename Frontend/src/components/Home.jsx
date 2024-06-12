@@ -12,7 +12,7 @@ export default function Home() {
         <div className="flex-1 pt-16 mx-32">
             <div className="flex text-neutral-100 gap-16">
                 <h1 className="text-xl font-bold px-5 py-2 bg-slate-800 rounded-md hover:bg-emerald-900 hover:duration-300">For You</h1>
-                <div className="relative" onClick={toggleDropdown}>
+                <div className="" onClick={toggleDropdown}>
                     <button className="flex text-xl bg-slate-800 rounded-md w-40 px-8 py-2 hover:bg-emerald-900 hover:duration-300 focus:bg-emerald-900" onClick={toggleDropdown} >
                         Sort By <IoMdArrowDropdown className="mt-1.5 ml-2" />
                     </button>
