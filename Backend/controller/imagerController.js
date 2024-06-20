@@ -4,9 +4,9 @@ const createImager = (async(req, res) => {
     const { username, password } = req.body;
 
     try {
-        const existUser = await imagerCreate.findOne({ username });
+        const existImager = await imagerCreate.findOne({ username });
 
-        if (existUser) {
+        if (existImager) {
             console.log(Error)
             return res.status(400).json({ message: 'Email already exists.' });
         }
