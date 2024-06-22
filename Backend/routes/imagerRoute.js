@@ -4,6 +4,6 @@ const Login = require("../controller/imagerSigninController");
 
 router.post('/imager/create', Create.createImager);
 
-router.get('/imager/login', Login.Login);
+router.post('/imager/login', Login.Login);
 
 module.exports = router;
