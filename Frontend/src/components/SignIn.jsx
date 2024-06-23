@@ -7,6 +7,20 @@ import { IoClose } from "react-icons/io5";
 
 export default function SignIn({ closePopup }) {
 
+    useEffect(() => {
+        // Add class to disable scrolling
+        document.body.style.overflow = 'hidden';
+
+        // Cleanup function to remove class
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, []);
+
+    const closemodel = () => {
+        closePopup();
+    };
+
     const { navigate } = useNavigate();
 
     const formik = useFormik({
@@ -25,31 +39,18 @@ export default function SignIn({ closePopup }) {
             axios.post("http://localhost:8000/imager/login", { username, password })
                 .then(() => {
                     alert("You have signed in successfully");
-                    navigate('/');
+                    navigate('/profile');
                 })
                 .catch((err) => {
                     console.error(err);
                     alert("Sign in failed. Please check your credentials and try again.");
+                    navigate('/profile');
                 })
                 .finally(() => {
                     setSubmitting(false);
                 });
         }
     })
-
-    useEffect(() => {
-        // Add class to disable scrolling
-        document.body.style.overflow = 'hidden';
-
-        // Cleanup function to remove class
-        return () => {
-            document.body.style.overflow = 'auto';
-        };
-    }, []);
-
-    const closemodel = () => {
-        closePopup();
-    };
 
     return (
         <div

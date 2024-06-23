@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
+import ImagerProfile from './components/ImagerProfile';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path='/' element={ <Home/>}/>
             <Route path='/signup' element={< SignUp/>} />
             <Route path='/signin' element={< SignIn/>} />
+            <Route path='/profile' element={< ImagerProfile/>} />
           </Routes>
           <Footer />
         </div>

@@ -6,6 +6,21 @@ import * as Yup from "yup";
 import axios from "axios";
 
 export default function SignUp({ closePopup }) {
+    
+    useEffect(() => {
+        // Add class to disable scrolling
+        document.body.style.overflow = 'hidden';
+
+        // Cleanup function to remove class
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, []);
+
+    const closemodel = () => {
+        closePopup();
+    };
+
 
     const navigate = useNavigate();
 
@@ -29,7 +44,8 @@ export default function SignUp({ closePopup }) {
             axios.post("http://localhost:8000/imager/create", newImager)
                 .then(() => {
                     alert("Imager signed up successfully");
-                    navigate('/');
+                    navigate('/profile');
+                    closePopup();
                 })
                 .catch((err) => {
                     alert("Imager signup failed.");
@@ -40,20 +56,6 @@ export default function SignUp({ closePopup }) {
                 });
         }
     });
-
-    useEffect(() => {
-        // Add class to disable scrolling
-        document.body.style.overflow = 'hidden';
-
-        // Cleanup function to remove class
-        return () => {
-            document.body.style.overflow = 'auto';
-        };
-    }, []);
-
-    const closemodel = () => {
-        closePopup();
-    };
 
     return (
         <div
