@@ -12,14 +12,12 @@ function App() {
     <Router>
       <>
         <div className='App flex flex-col min-h-screen'>
-          <Navbar />
           <Routes>
             <Route path='/' element={ <Home/>}/>
             <Route path='/signup' element={< SignUp/>} />
             <Route path='/signin' element={< SignIn/>} />
             <Route path='/profile' element={< ImagerProfile/>} />
           </Routes>
-          <Footer />
         </div>
       </>
     </Router>
