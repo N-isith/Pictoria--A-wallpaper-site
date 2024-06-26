@@ -61,9 +61,9 @@ export default function ImagerProfile() {
                 </a>
             </div>
             <div>
-                <div className="bg-slate-700 flex justify-start mx-16 p-5 pe-10 rounded-md">
+                <div className="bg-slate-800 flex justify-start mx-16 p-5 pe-10 rounded-md">
                     <img
-                        src="https://static-00.iconduck.com/assets.00/profile-circle-icon-512x512-zxne30hp.png"
+                        src="https://static-00.iconduck.com/assets.00/profile-default-icon-2048x2045-u3j7s5nj.png"
                         alt="profile image"
                         className="w-32 h-32"
                     />

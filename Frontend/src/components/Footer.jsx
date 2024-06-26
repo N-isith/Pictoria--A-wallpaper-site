@@ -12,8 +12,8 @@ export default function Footer() {
     return (
         <div className="">
             <hr className="w-11/12 mx-auto my-5 border-t-2 border-indigo-500" />
-            <div>
-                <a href=""><h1 className="text-center text-emerald-800 font-extrabold text-4xl" onClick={() => {navigate('/')}}>𝓟𝓘𝓒𝓣𝓞𝓡𝓘𝓐</h1></a>
+            <div className="text-center">
+                <a href="" className="text-center text-emerald-800 font-extrabold text-4xl" onClick={() => {navigate('/')}}>𝓟𝓘𝓒𝓣𝓞𝓡𝓘𝓐</a>
             </div>
             <hr className="w-10/12 mx-auto my-5 border-t-2 border-indigo-500" />
             <div>
