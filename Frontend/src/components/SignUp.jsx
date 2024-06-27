@@ -6,7 +6,7 @@ import * as Yup from "yup";
 import axios from "axios";
 
 export default function SignUp({ closePopup }) {
-    
+
     useEffect(() => {
         // Add class to disable scrolling
         document.body.style.overflow = 'hidden';
@@ -20,7 +20,6 @@ export default function SignUp({ closePopup }) {
     const closemodel = () => {
         closePopup();
     };
-
 
     const navigate = useNavigate();
 
@@ -59,13 +58,13 @@ export default function SignUp({ closePopup }) {
 
     return (
         <div
-            id="maincnt"
-            onClick={closemodel}
+            id="SinupPopup"
+            onClick={ (e) => {e.target.id === 'SinupPopup' ? closePopup() : null}}
             className="w-screen h-screen top-0 bottom-0 left-0 right-0 fixed flex justify-center bg-black bg-opacity-60 backdrop-blur-sm">
             <div className="bg-slate-800 p-10 rounded-2xl mx-auto my-auto relative">
 
                 <button className="bg-slate-700 px-1.5 py-1.5 rounded-md text-amber-300 font-bold hover:outline outline-1 absolute top-6 right-6"
-                    onClick={closePopup}
+                    onClick={closemodel}
                 ><IoClose />
                 </button>
 
@@ -107,7 +106,7 @@ export default function SignUp({ closePopup }) {
                             <div className="text-red-500">{formik.errors.reEnterPassword}</div>
                         ) : null}
                     </div>
-                    <button type="submit" className="bg-slate-700  px-5 py-1.5 mt-3 rounded-md text-amber-300 font-bold hover:outline outline-1"  disabled={formik.isSubmitting}>Sign Up</button>
+                    <button type="submit" className="bg-slate-700  px-5 py-1.5 mt-3 rounded-md text-amber-300 font-bold hover:outline outline-1" disabled={formik.isSubmitting}>Sign Up</button>
                 </form>
             </div>
         </div>

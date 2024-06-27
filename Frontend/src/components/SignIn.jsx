@@ -21,7 +21,7 @@ export default function SignIn({ closePopup }) {
         closePopup();
     };
 
-    const { navigate } = useNavigate();
+    const navigate = useNavigate();
 
     const formik = useFormik({
         initialValues: {
@@ -54,13 +54,13 @@ export default function SignIn({ closePopup }) {
 
     return (
         <div
-            id="maincnt"
-            onClick={closemodel}
+            id="SigninPopup"
+            onClick={ (e) => {e.target.id === 'SigninPopup' ? closePopup() : null}}
             className="w-screen h-screen top-0 bottom-0 left-0 right-0 fixed flex justify-center bg-black bg-opacity-60 backdrop-blur-sm">
             <div className="bg-slate-800 p-10 rounded-2xl mx-auto my-auto relative">
 
                 <button className="bg-slate-700 px-1.5 py-1.5 rounded-md text-amber-300 font-bold hover:outline outline-1 absolute top-6 right-6"
-                    onClick={closePopup}
+                    onClick={closemodel}
                 ><IoClose />
                 </button>
 

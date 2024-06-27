@@ -9,13 +9,13 @@ export default function Navbar() {
   const [showPopupsignup, setShowPopupSignup] = useState(false);
   const [showPopupsignin, setShowPopupSignin] = useState(false);
 
-  const slowShowSignuppopup = (pop) => {
-    pop.preventDefault();
+  const slowShowSignuppopup = (event) => {
+    if (event) event.preventDefault();
     setShowPopupSignup(!showPopupsignup);
   };
 
-  const slowShowSigninpopup = (pop) => {
-    pop.preventDefault();
+  const slowShowSigninpopup = (event) => {
+    if (event) event.preventDefault();
     setShowPopupSignin(!showPopupsignin);
   };
 
