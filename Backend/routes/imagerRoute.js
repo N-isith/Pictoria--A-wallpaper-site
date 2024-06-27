@@ -6,4 +6,6 @@ router.post('/imager/create', Create.createImager);
 
 router.post('/imager/login', Login.Login);
 
+router.get('/imager/profiledata', Login.ReadUser);
+
 module.exports = router;

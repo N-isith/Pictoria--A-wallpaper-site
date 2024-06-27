@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "./Footer";
 import { MdBookmarks } from "react-icons/md";
 import { PiUploadSimpleBold } from "react-icons/pi";
 import Imagetab from "./ImageTab";
+import axios from "axios";
 
 function ImagetabUpload() {
     return (
@@ -53,6 +54,23 @@ export default function ImagerProfile() {
         setActiveTab('bookmark');
     };
 
+
+    const [userData, setUserdata] = useState([]);
+
+    useEffect(() => {
+        function ReadUser() {
+            axios.get("http://localhost:8000/imager/profiledata")
+                .then((res) => {
+                    setUserdata(res.data);
+                })
+                .catch((err) => {
+                    console.error(err);
+                    alert("Use data fetching failed.");
+                })
+        }
+        ReadUser();
+    }, [])
+
     return (
         <>
             <div className="py-4 text-center text-emerald-800 font-extrabold text-5xl">
@@ -67,10 +85,13 @@ export default function ImagerProfile() {
                         alt="profile image"
                         className="w-32 h-32"
                     />
-                    <div className="">
-                        <h2 className="text-neutral-200 text-3xl font-bold mt-5 ml-4">Nisitha Lakshan</h2>
-                        <h4 className="text-green-300 text-lg ps-0.5 mt-1 ml-4">nisithalakshan94@gmail.com</h4>
-                    </div>
+
+                    {userData.map((user) => (
+                        <div key={user._id} className="">
+                            <h2 className="text-neutral-200 text-3xl font-bold mt-5 ml-4">Nisitha Lakshan</h2>
+                            <h4 className="text-green-300 text-lg ps-0.5 mt-1 ml-4">{user.username}</h4>
+                        </div>
+                    ))}
                     <div className="flex ml-auto text-neutral-200 font-semibold h-fit gap-40">
                         <div className="text-center">
                             <h2 className="text-lg mt-5">Uploads</h2>
@@ -111,6 +132,7 @@ export default function ImagerProfile() {
                     </div>
                 </div>
             </div>
+
             <Footer />
         </>
     );
