@@ -61,21 +61,21 @@ export default function SignUp({ closePopup }) {
             id="SinupPopup"
             onClick={ (e) => {e.target.id === 'SinupPopup' ? closePopup() : null}}
             className="w-screen h-screen top-0 bottom-0 left-0 right-0 fixed flex justify-center bg-black bg-opacity-60 backdrop-blur-sm">
-            <div className="bg-slate-800 p-10 rounded-2xl mx-auto my-auto relative">
+            <div className="bg-slate-900 p-10 rounded-2xl mx-auto my-auto relative">
 
-                <button className="bg-slate-700 px-1.5 py-1.5 rounded-md text-amber-300 font-bold hover:outline outline-1 absolute top-6 right-6"
+                <button className="bg-slate-700 px-1.5 py-1.5 rounded-md text-emerald-500 font-bold hover:outline outline-1 absolute top-6 right-6"
                     onClick={closemodel}
                 ><IoClose />
                 </button>
 
-                <h1 className="font-bold text-amber-300 text-3xl flex justify-center -mt-6 mb-6">Register</h1>
-                <form className="text-amber-300 text-start text-lg" onSubmit={formik.handleSubmit}>
+                <h1 className="font-bold text-emerald-500 text-3xl flex justify-center -mt-6 mb-6">Register</h1>
+                <form className="text-emerald-500 text-start text-lg" onSubmit={formik.handleSubmit}>
                     <div className="mb-5">
                         <label htmlFor="userName" className="block mb-1.5">Username :</label>
                         <input
                             id="username"
                             type="text"
-                            className="text-neutral-200 w-96 outline-0 bg-slate-800 border-b-2 h-10 ps-3 border-neutral-200 focus:bg-slate-900 "
+                            className="text-neutral-200 w-96 outline-0 bg-slate-900 border-b-2 h-10 ps-3 border-neutral-200 focus:bg-slate-900 "
                             {...formik.getFieldProps('username')}
                         />
                         {formik.touched.username && formik.errors.username ? (
@@ -87,7 +87,7 @@ export default function SignUp({ closePopup }) {
                         <input
                             id="password"
                             type="password"
-                            className="text-neutral-200 w-96 outline-0 bg-slate-800 border-b-2 h-10 ps-3 border-neutral-200 focus:bg-slate-900"
+                            className="text-neutral-200 w-96 outline-0 bg-slate-900 border-b-2 h-10 ps-3 border-neutral-200 focus:bg-slate-900"
                             {...formik.getFieldProps('password')}
                         />
                         {formik.touched.password && formik.errors.password ? (
@@ -99,14 +99,14 @@ export default function SignUp({ closePopup }) {
                         <input
                             id="reEnterPassword"
                             type="password"
-                            className="text-neutral-200 w-96 outline-0 bg-slate-800 border-b-2 h-10 ps-3 border-neutral-200 focus:bg-slate-900"
+                            className="text-neutral-200 w-96 outline-0 bg-slate-900 border-b-2 h-10 ps-3 border-neutral-200 focus:bg-slate-900"
                             {...formik.getFieldProps('reEnterPassword')}
                         />
                         {formik.touched.reEnterPassword && formik.errors.reEnterPassword ? (
                             <div className="text-red-500">{formik.errors.reEnterPassword}</div>
                         ) : null}
                     </div>
-                    <button type="submit" className="bg-slate-700  px-5 py-1.5 mt-3 rounded-md text-amber-300 font-bold hover:outline outline-1" disabled={formik.isSubmitting}>Sign Up</button>
+                    <button type="submit" className="bg-slate-700  px-5 py-1.5 mt-3 rounded-md text-emerald-500 font-bold hover:outline outline-1" disabled={formik.isSubmitting}>Sign Up</button>
                 </form>
             </div>
         </div>

@@ -73,7 +73,7 @@ export default function ImagerProfile() {
 
     return (
         <>
-            <div className="py-4 text-center text-emerald-800 font-extrabold text-5xl">
+            <div className="py-4 text-center text-emerald-500 font-extrabold text-5xl">
                 <a href="">
                     <h1>𝓟𝓘𝓒𝓣𝓞𝓡𝓘𝓐</h1>
                 </a>
