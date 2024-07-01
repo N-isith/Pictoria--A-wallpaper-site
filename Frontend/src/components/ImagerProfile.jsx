@@ -111,13 +111,13 @@ export default function ImagerProfile() {
                 <div>
                     <div className="flex ms-16 mt-10 mb-5 text-neutral-200">
                         <button
-                            className={`flex text-xl font-bold px-5 py-2 ml-0 bg-slate-800 rounded-md hover:bg-emerald-900 hover:duration-300 ${activeTab === 'upload' && 'bg-emerald-900'}`}
+                            className={`flex text-xl font-bold px-5 py-2 ml-0 bg-slate-800 rounded-md hover:bg-emerald-800 hover:duration-300 ${activeTab === 'upload' && 'bg-emerald-800'}`}
                             onClick={onUploadClick}
                         >
                             Uploads <PiUploadSimpleBold className="ml-3 mt-1" />
                         </button>
                         <button
-                            className={`flex text-xl font-bold px-5 py-2 ml-5 bg-slate-800 rounded-md hover:bg-emerald-900 hover:duration-300 ${activeTab === 'bookmark' && 'bg-emerald-900'}`}
+                            className={`flex text-xl font-bold px-5 py-2 ml-5 bg-slate-800 rounded-md hover:bg-emerald-800 hover:duration-300 ${activeTab === 'bookmark' && 'bg-emerald-800'}`}
                             onClick={onBookmarkClick}
                         >
                             Bookmarks <MdBookmarks className="ml-3 mt-1" />

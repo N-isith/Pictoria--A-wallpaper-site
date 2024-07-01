@@ -19,7 +19,7 @@ export default function Footer() {
             <div>
                 <ul className="flex justify-center gap-10 font-bold text-neutral-100 text-lg">
                     <li className="hover:text-emerald-600 hover:duration-200"><a href="">Home</a></li>
-                    <li className="hover:text-emerald-600 hover:duration-200"><a href="">About Us</a></li>
+                    <li className="hover:text-emerald-600 hover:duration-200"><a href="/about">About Us</a></li>
                     <li className="hover:text-emerald-600 hover:duration-200"><a href="">Help</a></li>
                 </ul>
             </div>
