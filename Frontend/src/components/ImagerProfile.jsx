@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Footer from "./Footer";
 import { MdBookmarks } from "react-icons/md";
 import { PiUploadSimpleBold } from "react-icons/pi";
+import { BiSolidImageAdd } from "react-icons/bi";
 import Imagetab from "./ImageTab";
 import axios from "axios";
 
@@ -121,6 +122,10 @@ export default function ImagerProfile() {
                             onClick={onBookmarkClick}
                         >
                             Bookmarks <MdBookmarks className="ml-3 mt-1" />
+                        </button>
+                        <button className="flex text-xl font-bold px-5 py-2 ml-auto mr-20 bg-slate-800 rounded-md hover:bg-emerald-800 hover:duration-300"
+                        >
+                            Create a new image <BiSolidImageAdd  className="ml-3 mt-1.5" />
                         </button>
                     </div>
                     <hr className="mx-16 border-indigo-500 border-t-2" />

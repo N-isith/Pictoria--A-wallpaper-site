@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
-import SignUp from './components/SignUp';
-import SignIn from './components/SignIn';
+import SignUp from './components/popups/SignUp';
+import SignIn from './components/popups/SignIn';
 import ImagerProfile from './components/ImagerProfile';
 import AboutUs from './components/AboutUs';
 

@@ -1,7 +1,8 @@
 import React from "react";
 import Navbar from "./Navbar.jsx";
 import Footer from "./Footer.jsx";
-import { FaSearch } from "react-icons/fa";
+import { RiChatUploadFill } from "react-icons/ri";
+import { FaCameraRetro } from "react-icons/fa";
 
 
 function AboutImagetab() {
@@ -29,9 +30,9 @@ export default function AboutUs() {
     return (
         <>
             <Navbar />
-            <div className="bg-slate-800 bg-opacity-50 m-40 ml-5 mt-20 rounded-lg flex justify-between">
+            <div className="bg-slate-800 bg-opacity-50 m-28 ml-5 mt-20 rounded-lg flex justify-between">
                 <div className="text-neutral-200 w-3/5 p-20 pt-60">
-                    <h1 className="text-emerald-600 font-bold text-5xl mb-3">Explore  your  desires</h1>
+                    <h1 className="text-emerald-600 font-bold text-5xl mb-3">Explore  your  desires...</h1>
                     <p className="w-3/4 mb-10 font-semibold text-lg">All type of images available in PICTORIA allow you to find any image you want</p>
                     <button className="bg-emerald-700 hover:bg-emerald-600 px-7 py-3 rounded-md text-xl font-semibold">Start Browsing</button>
                 </div>
@@ -40,14 +41,18 @@ export default function AboutUs() {
                 </div>
             </div>
 
-            <div className="bg-slate-800 bg-opacity-50 m-40 mt-5 mr-5 rounded-lg flex justify-between">
+            <h1 className="text-neutral-200 text-4xl font-bold ml-10 mb-20">PICTORIA is what you have been searching for...</h1>
+
+            <div className="bg-slate-800 bg-opacity-50 m-24 mt-5 mr-5 rounded-lg flex justify-between">
                 <div className="m-20 text-neutral-200 w-3/5 p-20 pt-32">
-                    <h1 className="text-emerald-600 text-3xl font-bold mb-10">Show your talent to the World!...</h1>
-                    <p className="text-lg text-neutral-200 font-semibold w-3/4 mb-10">PICTORIA will allow you to upload images you have captured, created
+                    <h1 className="text-emerald-600 text-5xl font-bold -mt-16 -ml-16 absolute">Show your talent to the World!...</h1>
+                    <p className="text-lg text-neutral-200 font-semibold w-10/12 mt-10 mb-10">PICTORIA will allow you to upload images you have captured, created
                         and to share those with the world. <br />
                         And also you can categorize your images which will make people realize how versatile artist you are.
                     </p>
-                    <button className="bg-emerald-700 hover:bg-emerald-600 px-7 py-3 rounded-md text-xl font-semibold">Start Browsing</button>
+                    <button className="bg-emerald-700 hover:bg-emerald-600 px-10 py-4 mb-1 rounded-md text-start text-2xl font-semibold">Upload your own images
+                        <RiChatUploadFill className="relative ml-72 size-7 -mt-7"/>
+                    </button>
                 </div>
                 <div className="w-2/5">
                     <AboutImagetab />
