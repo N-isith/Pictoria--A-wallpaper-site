@@ -27,19 +27,21 @@ export default function SignUp({ closePopup }) {
     const formik = useFormik({
         initialValues: {
             username: '',
+            useremail: '',
             password: '',
             reEnterPassword: ''
         },
         validationSchema: Yup.object({
-            username: Yup.string().email("Invalid email address*").required("Required*"),
+            username: Yup.string().min(5).max(40).required("User Name Required*"),
+            useremail: Yup.string().email("Invalid email address*").required("Required*"),
             password: Yup.string().min(8, "Password should have at least 8 characters*").max(40, "Password should have at most 40 characters*").required("Required*"),
             reEnterPassword: Yup.string()
                 .oneOf([Yup.ref('password'), null], 'Passwords must match*')
                 .required("Required*")
         }),
         onSubmit: (values, { setSubmitting }) => {
-            const { username, password } = values;
-            const newImager = { username, password };
+            const { username, useremail, password } = values;
+            const newImager = { username, useremail, password };
 
             axios.post("http://localhost:8000/imager/create", newImager)
                 .then(() => {
@@ -82,6 +84,18 @@ export default function SignUp({ closePopup }) {
                                 type="text"
                                 className="text-neutral-200 w-96 outline-0 bg-slate-900 border-b-2 h-10 ps-3 border-neutral-200 focus:bg-slate-900 "
                                 {...formik.getFieldProps('username')}
+                            />
+                            {formik.touched.username && formik.errors.username ? (
+                                <div className="text-red-500">{formik.errors.username}</div>
+                            ) : null}
+                        </div>
+                        <div className="mb-5">
+                            <label htmlFor="userEmail" className="block mb-1.5">Email :</label>
+                            <input
+                                id="useremail"
+                                type="text"
+                                className="text-neutral-200 w-96 outline-0 bg-slate-900 border-b-2 h-10 ps-3 border-neutral-200 focus:bg-slate-900 "
+                                {...formik.getFieldProps('useremail')}
                             />
                             {formik.touched.username && formik.errors.username ? (
                                 <div className="text-red-500">{formik.errors.username}</div>

@@ -4,12 +4,17 @@ const yup = require("yup");
 const schema = mongoose.Schema;
 
 const ImagerValidateSchema = yup.object().shape({
-    username: yup.string().email().required(),
+    username: yup.string().min(5).max(40).required(),
+    useremail: yup.string().email().required(),
     password: yup.string().min(8, "Password should have atleast 8 characters").max(40).required()
 })
 
 const ImagerSchema = new schema( {
     username: {
+        type: String,
+        required: true,
+    },
+    useremail: {
         type: String,
         required: true,
     },

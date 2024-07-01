@@ -1,10 +1,10 @@
 const imagerCreate = require('../models/imagerModel.js');
 
 const createImager = (async(req, res) => {
-    const { username, password } = req.body;
+    const { username, useremail, password } = req.body;
 
     try {
-        const existImager = await imagerCreate.findOne({ username });
+        const existImager = await imagerCreate.findOne({ useremail });
 
         if (existImager) {
             console.log(Error)
@@ -12,6 +12,7 @@ const createImager = (async(req, res) => {
         }
         const newImager = new imagerCreate({
             username,
+            useremail,
             password
         });
         await newImager.save();

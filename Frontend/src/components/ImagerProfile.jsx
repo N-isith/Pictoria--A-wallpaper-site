@@ -88,8 +88,8 @@ export default function ImagerProfile() {
 
                     {userData.map((user) => (
                         <div key={user._id} className="">
-                            <h2 className="text-neutral-200 text-3xl font-bold mt-5 ml-4">Nisitha Lakshan</h2>
-                            <h4 className="text-green-300 text-lg ps-0.5 mt-1 ml-4">{user.username}</h4>
+                            <h2 className="text-neutral-200 text-3xl font-bold mt-5 ml-4">{user.username}</h2>
+                            <h4 className="text-green-300 text-lg ps-0.5 mt-1 ml-4">{user.useremail}</h4>
                         </div>
                     ))}
                     <div className="flex ml-auto text-neutral-200 font-semibold h-fit gap-40">
@@ -111,13 +111,13 @@ export default function ImagerProfile() {
                 <div>
                     <div className="flex ms-16 mt-10 mb-5 text-neutral-200">
                         <button
-                            className={`flex text-xl font-bold px-5 py-2 ml-0 bg-slate-800 rounded-md hover:bg-emerald-800 hover:duration-300 ${activeTab === 'upload' && 'bg-emerald-800'}`}
+                            className={`flex text-xl font-bold px-5 py-2 ml-0 bg-slate-800 rounded-md hover:bg-emerald-800 hover:duration-300 ${activeTab === 'upload' && 'bg-emerald-900'}`}
                             onClick={onUploadClick}
                         >
                             Uploads <PiUploadSimpleBold className="ml-3 mt-1" />
                         </button>
                         <button
-                            className={`flex text-xl font-bold px-5 py-2 ml-5 bg-slate-800 rounded-md hover:bg-emerald-800 hover:duration-300 ${activeTab === 'bookmark' && 'bg-emerald-800'}`}
+                            className={`flex text-xl font-bold px-5 py-2 ml-5 bg-slate-800 rounded-md hover:bg-emerald-800 hover:duration-300 ${activeTab === 'bookmark' && 'bg-emerald-900'}`}
                             onClick={onBookmarkClick}
                         >
                             Bookmarks <MdBookmarks className="ml-3 mt-1" />
