@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="">
             <hr className="w-11/12 mx-auto my-5 border-t-2 border-indigo-500" />
             <div className="text-center">
-                <a href="" className="text-center text-emerald-700 font-extrabold text-4xl" onClick={() => {navigate('/')}}>𝓟𝓘𝓒𝓣𝓞𝓡𝓘𝓐</a>
+                <a href="" className="text-center text-emerald-600 font-extrabold text-4xl" onClick={() => {navigate('/')}}>𝓟𝓘𝓒𝓣𝓞𝓡𝓘𝓐</a>
             </div>
             <hr className="w-10/12 mx-auto my-5 border-t-2 border-indigo-500" />
             <div>

@@ -26,18 +26,18 @@ export default function SignIn({ closePopup }) {
 
     const formik = useFormik({
         initialValues: {
-            username: '',
+            useremail: '',
             password: ''
         },
         validationSchema: Yup.object({
-            username: Yup.string().email("Invalid email address*").required("Required*"),
+            useremail: Yup.string().email("Invalid email address*").required("Required*"),
             password: Yup.string().min(8, "Password should have at least 8 characters*").max(40, "Password should have at most 40 characters*").required("Required*"),
         }),
 
         onSubmit: (values, { setSubmitting }) => {
-            const { username, password } = values;
+            const { useremail, password } = values;
 
-            axios.post("http://localhost:8000/imager/login", { username, password })
+            axios.post("http://localhost:8000/imager/login", { useremail, password })
                 .then(() => {
                     toast.success("You have signed in successfully!");
                     setTimeout(() => {
@@ -71,15 +71,15 @@ export default function SignIn({ closePopup }) {
                     <h1 className="font-bold text-emerald-500 text-3xl flex justify-center -mt-6 mb-6">Log In</h1>
                     <form className="text-emerald-500 text-start text-lg" onSubmit={formik.handleSubmit}>
                         <div className="mb-5">
-                            <label htmlFor="username" className="block mb-1.5">Username :</label>
+                            <label htmlFor="useremail" className="block mb-1.5">Email :</label>
                             <input
-                                id="username"
+                                id="useremail"
                                 type="text"
                                 className="text-neutral-200 w-96 outline-0 bg-slate-900 border-b-2 h-10 ps-3 border-neutral-200 focus:bg-slate-900 "
-                                {...formik.getFieldProps('username')}
+                                {...formik.getFieldProps('useremail')}
                             />
-                            {formik.touched.username && formik.errors.username ? (
-                                <div className="text-red-500">{formik.errors.username}</div>
+                            {formik.touched.useremail && formik.errors.useremail ? (
+                                <div className="text-red-500">{formik.errors.useremail}</div>
                             ) : null}
                         </div>
                         <div className="mb-6">
