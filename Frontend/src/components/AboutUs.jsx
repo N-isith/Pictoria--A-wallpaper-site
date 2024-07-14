@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import Navbar from "./Navbar.jsx";
 import Footer from "./Footer.jsx";
 import { RiChatUploadFill } from "react-icons/ri";
 import { FaCameraRetro } from "react-icons/fa";
+import ImageUpload from "./popups/ImageUpload.jsx";
 
 
 function AboutImagetab() {
@@ -27,6 +28,12 @@ function AboutImagetab() {
 }
 
 export default function AboutUs() {
+    const [imgUpload, setimgupload] = useState(false);
+
+
+    const HandleImgUpload = () => {
+        setimgupload(!imgUpload)
+    }
     return (
         <>
             <Navbar />
@@ -50,8 +57,12 @@ export default function AboutUs() {
                         and to share those with the world. <br />
                         And also you can categorize your images which will make people realize how versatile artist you are.
                     </p>
-                    <button className="bg-emerald-700 hover:bg-emerald-600 px-10 py-4 mb-1 rounded-md text-start text-2xl font-semibold">Upload your own images
-                        <RiChatUploadFill className="relative ml-72 size-7 -mt-7"/>
+                    <button
+                        className="bg-emerald-700 hover:bg-emerald-600 px-10 py-4 mb-1 rounded-md text-start text-2xl font-semibold"
+                        onClick={HandleImgUpload}
+                    >Upload your own images
+                        <RiChatUploadFill className="relative ml-72 size-7 -mt-7" />
+                        { imgUpload && <ImageUpload setcloseimgupload={ HandleImgUpload }/>}
                     </button>
                 </div>
                 <div className="w-2/5">

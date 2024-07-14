@@ -5,6 +5,7 @@ import SignUp from './components/popups/SignUp';
 import SignIn from './components/popups/SignIn';
 import ImagerProfile from './components/ImagerProfile';
 import AboutUs from './components/AboutUs';
+import Help from './components/Help';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path='/signin' element={< SignIn />} />
             <Route path='/profile' element={< ImagerProfile />} />
             <Route path='/about' element={<AboutUs />} />
+            <Route path='/help' element={<Help />} />
           </Routes>
         </div>
       </>
