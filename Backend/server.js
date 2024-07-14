@@ -22,3 +22,6 @@ mongoose.connect( MONGODB_URL)
 
 const imagerRoutes = require('./routes/imagerRoute.js');
 app.use(imagerRoutes);
+
+const helpRoutes = require('./routes/helpRoutes.js');
+app.use(helpRoutes)
