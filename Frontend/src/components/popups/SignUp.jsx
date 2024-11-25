@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoClose } from "react-icons/io5";
 import { useFormik } from "formik";
+import { api } from "../../api";
 import * as Yup from "yup";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
@@ -43,7 +44,7 @@ export default function SignUp({ closePopup }) {
             const { username, useremail, password } = values;
             const newImager = { username, useremail, password };
 
-            axios.post("http://localhost:8000/imager/create", newImager)
+            axios.post(`${api}/imager/create`, newImager)
                 .then(() => {
                     toast.success("Imager signed up successfully");
                     setTimeout(() => {

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom"
 import { useFormik } from "formik";
+import { api } from "../../api";
 import axios from "axios";
 import * as Yup from "yup";
 import { IoClose } from "react-icons/io5";
@@ -37,7 +38,7 @@ export default function SignIn({ closePopup }) {
         onSubmit: (values, { setSubmitting }) => {
             const { useremail, password } = values;
 
-            axios.post("http://localhost:8000/imager/login", { useremail, password })
+            axios.post(`${api}/imager/login`, { useremail, password })
                 .then(() => {
                     toast.success("You have signed in successfully!");
                     setTimeout(() => {

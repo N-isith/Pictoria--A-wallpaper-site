@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import axios from "axios";
+import { api } from "../api";
 
 export default function Help() {
     const [name, setName] = useState();
@@ -19,7 +20,7 @@ export default function Help() {
             message
         }
 
-        axios.post("http://localhost:8000/help/add", newHelp)
+        axios.post(`${api}/help/add`, newHelp)
             .then(() => {
                 alert("Help created successfully")
             })

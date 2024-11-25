@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import { MdBookmarks } from "react-icons/md";
 import { PiUploadSimpleBold } from "react-icons/pi";
 import { BiSolidImageAdd } from "react-icons/bi";
+import { api } from "../api";
 import Imagetab from "./ImageTab";
 import axios from "axios";
 import ImageUpload from "./popups/ImageUpload";
@@ -68,7 +69,7 @@ export default function ImagerProfile() {
 
     useEffect(() => {
         function ReadUser() {
-            axios.get("http://localhost:8000/imager/profiledata")
+            axios.get(`${api}/imager/profiledata`)
                 .then((res) => {
                     setUserdata(res.data);
                 })
@@ -78,7 +79,7 @@ export default function ImagerProfile() {
                 })
         }
         ReadUser();
-    }, [])
+    }, [])  
 
     return (
         <>
